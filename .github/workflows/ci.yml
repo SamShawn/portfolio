@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Quality Gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+          cache-dependency-path: pnpm-lock.yaml
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Check web app exists
+        id: check-web
+        run: |
+          if [ -f apps/web/package.json ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Lint
+        if: steps.check-web.outputs.exists == 'true'
+        run: pnpm --filter web lint
+
+      - name: Typecheck
+        if: steps.check-web.outputs.exists == 'true'
+        run: pnpm --filter web typecheck
+
+      - name: Build
+        if: steps.check-web.outputs.exists == 'true'
+        run: pnpm --filter web build

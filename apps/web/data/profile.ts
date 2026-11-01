@@ -22,3 +22,33 @@ export const profile: Profile = {
   resumeUrl: '/resume.pdf',
   lookingFor: '寻求远程全职工程师岗位',
 }
+
+export interface SkillGroup {
+  label: string
+  items: string[]
+}
+
+export const skillGroups: SkillGroup[] = [
+  {
+    label: '日常主力',
+    items: [
+      'React',
+      'Taro',
+      'Zustand',
+      'NestJS',
+      'Node.js',
+      'Prisma',
+      'MySQL',
+      'pnpm Monorepo',
+      'GitHub Actions',
+    ],
+  },
+  {
+    label: '有项目经验',
+    items: ['微信小程序', 'Python', 'PostgreSQL', '阿里云 OSS', 'Git'],
+  },
+  {
+    label: '了解 / 学习中',
+    items: ['Vue'],
+  },
+]

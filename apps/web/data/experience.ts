@@ -8,7 +8,7 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    company: '威廉欧奈尔信息科技（上海）有限公司',
+    company: '威廉欧奈尔信息科技(上海)有限公司',
     role: '全栈程序员',
     period: '2022.10-2025.7',
     product:
@@ -21,11 +21,10 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: '行成佳（杭州）网络科技有限公司',
+    company: '行成佳(杭州)网络科技有限公司',
     role: '前端程序员',
     period: '2019.11-2022.9',
-    product:
-      'PlanHouse 微信小程序活动平台（累计 20 万+ 用户、8,000+ 场线下活动）',
+    product: 'PlanHouse 微信小程序（累计 20 万+ 用户、8,000+ 场线下活动）',
     bullets: [
       '负责小程序全部前端 UI 界面的开发与迭代维护，技术栈 React + Taro。',
       '与产品、后端协作完成活动发布、报名、社群展示等功能从需求到上线。',

@@ -12,8 +12,8 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: 'outdoor-platform',
-    title: '同城户外运动组局与交易平台',
-    period: '2026.09-2026.10',
+    title: '同城户外运动组局平台',
+    period: '2026.9-2026.10',
     role: '独立全栈开发',
     summary:
       '面向户外及运动爱好者的同城活动组局与交易平台，解决“想运动找不到搭子”的痛点，独立完成从架构到 CI 的全栈闭环。',
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     slug: 'oneil-panaray',
     title: 'PANARAY 量化分析终端',
     period: '2022.10-2025.7',
-    role: '全栈程序员 · 威廉欧奈尔信息科技（上海）',
+    role: '全栈程序员 · 威廉欧奈尔信息科技(上海)有限公司',
     summary:
       '面向机构投资者的全球股票研究平台，覆盖 82,000+ 证券、70+ 国家市场。负责数据可视化模块的前后端开发与维护。',
     techStack: ['React', 'Python', 'PostgreSQL'],
@@ -49,9 +49,9 @@ export const projects: Project[] = [
   },
   {
     slug: 'planhouse',
-    title: 'PlanHouse 微信小程序活动平台',
+    title: 'PlanHouse 微信小程序',
     period: '2019.11-2022.9',
-    role: '前端程序员 · 行成佳（杭州）网络科技',
+    role: '前端程序员 · 行成佳(杭州)网络科技有限公司',
     summary:
       '累计 20 万+ 用户、8,000+ 场线下活动的微信小程序活动平台。负责小程序全部前端 UI 界面的开发与迭代维护。',
     techStack: ['React', 'Taro', '微信小程序'],

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: `${profile.name} · ${profile.title}`,
   description: profile.subtitle,
-  metadataBase: new URL('https://sunxin.dev'),
+  metadataBase: new URL(profile.siteUrl),
   openGraph: {
     title: `${profile.name} · ${profile.title}`,
     description: profile.subtitle,
@@ -36,7 +36,7 @@ const jsonLd = {
   name: profile.name,
   jobTitle: profile.title,
   email: profile.email,
-  url: 'https://sunxin.dev',
+  url: profile.siteUrl,
   sameAs: [profile.github],
   address: {
     '@type': 'PostalAddress',

@@ -3,6 +3,40 @@ import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote-client/rsc'
 import { projects } from '@/data/projects'
 import { getMDXSource } from '@/lib/mdx'
+import type { Metadata } from 'next'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const project = projects.find((p) => p.slug === slug)
+
+  if (!project) {
+    return {
+      title: '项目未找到',
+    }
+  }
+
+  const title = `${project.title} · ${project.role}`
+  const description = project.summary
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary',
+      title,
+      description,
+    },
+  }
+}
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }))

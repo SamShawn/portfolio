@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { profile } from '@/data/profile'
+import { ContactForm } from '@/components/ui/contact-form'
 
 const links = [
   { label: '邮箱', value: profile.email, href: `mailto:${profile.email}` },
@@ -50,6 +51,13 @@ export function Contact() {
         >
           下载简历 PDF
         </Link>
+      </div>
+
+      <div className="mt-12">
+        <h3 className="text-sm font-medium text-neutral-900">或直接留言</h3>
+        <div className="mt-3">
+          <ContactForm />
+        </div>
       </div>
     </section>
   )

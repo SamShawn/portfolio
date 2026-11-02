@@ -8,6 +8,7 @@ export interface Profile {
   github: string
   resumeUrl: string
   lookingFor: string
+  siteUrl: string
 }
 
 export const profile: Profile = {
@@ -21,6 +22,7 @@ export const profile: Profile = {
   github: 'https://github.com/SamShawn',
   resumeUrl: '/resume.pdf',
   lookingFor: '寻求远程全职工程师岗位',
+  siteUrl: 'https://sunxin.dev',
 }
 
 export interface SkillGroup {
